@@ -1,4 +1,5 @@
 export type RootStackParamList = {
-  Home: {name?: string};
+  Home: {name?: string} | undefined;
   Login: undefined;
+  FlashCardList: undefined;
 };
