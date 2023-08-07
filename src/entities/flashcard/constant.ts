@@ -1,6 +1,6 @@
-import {FlashCardGroup} from './interface';
+import {IFlashCardGroup} from './interface';
 
-export const EXAMPLE1: FlashCardGroup = {
+export const EXAMPLE1: IFlashCardGroup = {
   id: '1',
   name: 'Example 1 flash cards',
   cards: [
@@ -37,7 +37,7 @@ export const EXAMPLE1: FlashCardGroup = {
   ],
 };
 
-export const EXAMPLE2: FlashCardGroup = {
+export const EXAMPLE2: IFlashCardGroup = {
   id: '2',
   name: 'Example 2 flash cards',
   cards: [

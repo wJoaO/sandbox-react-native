@@ -9,12 +9,12 @@ import {
 } from 'react-native';
 import {NativeStackScreenProps} from '@react-navigation/native-stack';
 import {RootStackParamList} from '../screens-config.interface';
-import {useFlashCardGroupList, FlashCardGroup} from '../entities/flashcard';
+import {useFlashCardGroupList, IFlashCardGroup} from '../entities/flashcard';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 
 type Props = NativeStackScreenProps<RootStackParamList, 'FlashCardList'>;
 
-export function FlashCardListScreen({}: Props): JSX.Element {
+export function FlashCardListScreen({navigation}: Props): JSX.Element {
   const {isLoading, data, isError} = useFlashCardGroupList();
   if (isLoading) {
     return (
@@ -31,15 +31,15 @@ export function FlashCardListScreen({}: Props): JSX.Element {
     );
   }
 
-  const renderFlashCardGroup = (group: FlashCardGroup) => (
+  const renderFlashCardGroup = (group: IFlashCardGroup) => (
     <View key={group.name} style={styles.card}>
       <TouchableHighlight
         style={styles.cardContentWrapper}
         activeOpacity={0.6}
         underlayColor="#DDDDDD"
-        onPress={() => {
-          console.log('Hello world pressed');
-        }}>
+        onPress={() =>
+          navigation.navigate('FlashCardGroup', {flashCardGroupId: group.id})
+        }>
         <View style={styles.cardContent}>
           <Text>{group.name}</Text>
           <Icon name="view-carousel" style={styles.cardIcon} />

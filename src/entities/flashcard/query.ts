@@ -6,3 +6,9 @@ export const useFlashCardGroupList = () =>
     queryKey: ['flashcard-list'],
     queryFn: FlashCardAPI.list,
   });
+
+export const useFlashCardGroup = (groupId: string) =>
+  useQuery({
+    queryKey: ['flashcard-detail', groupId],
+    queryFn: () => FlashCardAPI.detail(groupId),
+  });

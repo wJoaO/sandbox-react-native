@@ -1,12 +1,12 @@
-export interface FlashCard {
+export interface IFlashCard {
   front: string;
   back: string;
 }
 
-export interface FlashCardGroup {
+export interface IFlashCardGroup {
   id: string;
   name: string;
-  cards: FlashCard[];
+  cards: IFlashCard[];
 }
 
 export enum FlashCardAnswerResult {
@@ -15,11 +15,11 @@ export enum FlashCardAnswerResult {
   HARD,
 }
 
-export type FlashCardAnswer = FlashCard & {
+export type IFlashCardAnswer = IFlashCard & {
   result: FlashCardAnswerResult;
 };
 
-export interface FlashCardGroupAnswers {
+export interface IFlashCardGroupAnswers {
   name: string;
-  cards: FlashCardAnswer[];
+  cards: IFlashCardAnswer[];
 }

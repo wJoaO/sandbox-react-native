@@ -1,4 +1,9 @@
-import {LoginScreen, HomeScreen, FlashCardListScreen} from './Screens';
+import {
+  LoginScreen,
+  HomeScreen,
+  FlashCardListScreen,
+  FlashCardGroupScreen,
+} from './Screens';
 import {RootStackParamList} from './screens-config.interface';
 
 export interface Screen {
@@ -22,5 +27,10 @@ export const SCREENS: {[key: string]: Screen} = {
     name: 'FlashCardList',
     title: 'FlashCards',
     component: FlashCardListScreen,
+  },
+  FlashCardGroup: {
+    name: 'FlashCardGroup',
+    title: 'FlashCard',
+    component: FlashCardGroupScreen,
   },
 };
